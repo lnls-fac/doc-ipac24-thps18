@@ -144,7 +144,7 @@ Here, $\Delta\vec{\theta}$ is the kick vector that best explains the observed or
     \Delta\vec{x}_{\text{ID}} = M_{\text{SOFB}}\Delta\vec{\theta}_{\text{loc}},
 \end{equation}
 
-Which consists of the distortions introduced by the ID only, without the orbit drifts and effects from other perturbation sources. These filtered, local distortions can be corrected using the CMs adjacent to the ID. The Jacobian of the FF correctors was calculated using the storage ring computer model, while  SOFB's Jacobian was the  $320\times 280$ Orbit Response Matrix (ORM), routinely measured in the storage ring.  The final stage in calculating the FF table involved interpolating the kicks for all permissible configurations, achieved through a 2D Gaussian Process model [cite Gaussian model].  
+Which consists of the distortions introduced by the ID only, without the orbit drifts and effects from other perturbation sources. These filtered, local distortions can be corrected using the CMs adjacent to the ID. The Jacobian of the FF correctors was calculated using the storage ring computer model, while  SOFB's Jacobian was the  $320\times 280$ Orbit Response Matrix (ORM), routinely measured in the storage ring.  The final stage in calculating the FF table involved interpolating the kicks for all permissible configurations, achieved through a 2D Gaussian Process model \cite{Gaussian}.  
 
 Figure \ref{fig:orbit_slow} illustrates the root mean square (r.m.s) of orbit distortions across all beam position monitors (bpms) for various ID configurations with (solid lines) and without (dashed lines) the orbit FF acting. With FF-on,  the orbit residue is less than $\SI{2}{\mu m}$.
 
@@ -159,7 +159,7 @@ In addition to statically characterizing orbit distortion and residual effects f
 
 \begin{figure}[!h]
     \centering
-   \includegraphics[width=0.8\columnwidth]{THPS18_f4.pdf}
+   \includegraphics[width=0.75\columnwidth]{THPS18_f4.pdf}
    \caption{Effects ID movimentation on orbit and feedforward compensation.}
    \label{fig:orbit_fast}
 \end{figure}
@@ -176,7 +176,7 @@ The effects of the ID in the linear optics were also measured despite being very
    \label{fig:tunes}
 \end{figure}
 
-Two methods have been employed to counteract these influences on linear optics. The initial approach involves determining the orbit response matrix of the system for each DELTA configuration and subsequently minimizing the variance between the matrix in the standard setup (K=0, horizontal polarization) and all alternative configurations by adjusting the normal quadrupole strengths of the ID section. Nevertheless, owing to the marginal impact of the ID on optics, this technique proved ineffective, as the disparity in matrices resulting from various ID configurations equaled the resolution of matrix measurements.
+Two methods have been employed to counteract these influences on linear optics. The initial approach involves determining the orbit response matrix of the system for each DELTA configuration and subsequently minimizing the variance between the matrix in the standard setup (K=0, horizontal polarization) and all alternative configurations by adjusting the normal quadrupole strengths of the ID section. Here, the fast orbit response measurements with AC excitation of the correctors were used \cite{Velloso:IPAC22-MOPOTK002}; using this method, each matrix measurement only took about $3$ minutes. Nevertheless, owing to the marginal impact of the ID on optics, this technique proved ineffective, as the disparity in matrices resulting from various ID configurations equaled the resolution of matrix measurements.
 
 The alternative method only addresses tune shifts by utilizing the two quadrupole triplets immediately preceding and following the ID's straight section. In this approach, the Jacobian describing the influence of quadrupole strengths on the tunes was computed based on empirical measurements. As the quadrupoles are adjusted symmetrically, this Jacobian forms a $2 \times 3$ matrix. The efficacy of this correction method is illustrated in Figure \ref{fig:tunes}, indicating that the tune shifts are constrained within a variation range of less than 0.0004. It's noteworthy that the adjustments made to the quadrupole strengths were below $0.07\%$.
 
@@ -203,14 +203,16 @@ Following the DELTA installation, no impact was noted on the injection efficienc
 \end{figure}
 
 \section{Equilibrium parameters}
-The influence on beam emittance and energy spread resulting from the inclusion of the ID was calculated utilizing analytical expressions derived from synchrotron radiation integrals \cite{Lee:1999}.
+The influence on beam emittance and energy spread resulting from the inclusion of the ID was calculated utilizing analytical expressions derived from synchrotron radiation integrals \cite{Lee:1999}. Figure \ref{fig:eq_param} shows the effect of all the SIRIUS current IDs on the equilibrium parameters. In this calculation, it was assumed that all IDs were set to their maximum field configuration.
 
 \begin{figure}[!h]
     \centering
    \includegraphics[width=\columnwidth]{eqparams.pdf}
-   \caption{Effects SIRIUS IDs on equilibrium parameters.}
+   \caption{Effects of SIRIUS IDs on equilibrium parameters.}
    \label{fig:eq_param}
 \end{figure}
+
+Notably, despite the effect of the DELTA on emittance being small (about $\SI{-3.6}{\pico m~rad}$), it is considerably more significant than the APUs installed, in which each device only reduces the emittance by $\SI{1.27}{\pico m~rad}$. The DELTA introduces almost no effect on energy spread.
 
 \section{CONCLUSIONS}
 
@@ -257,6 +259,17 @@ The influence on beam emittance and energy spread resulting from the inclusion o
    in \emph{Proc. IPAC’23}, Venice, Italy, May 2023, pp. 1184--1187.
    \url{doi:10.18429/JACoW-IPAC2023-MOPM088}    
 
+ \bibitem{Gaussian}
+    Liu, Miao \emph{et al.},  
+    \textquotedblleft{Gaussian Processes for Learning and Control: A Tutorial with Examples}\textquotedblright,\emph{IEEE Control Systems}, vol. 38, no. 5, 2018, pp. 53–86.
+    \url{https://doi.org/10.1109/MCS.2018.2851010. }
+
+\bibitem{Velloso:IPAC22-MOPOTK002}
+   M. M. S. Velloso, M. B. Alves, and F. H. de Sá,
+   \textquotedblleft{Fast Orbit Response Matrix Measurement via Sine-Wave Excitation of Correctors at Sirius}\textquotedblright,
+   in \emph{Proc. IPAC’22}, Bangkok, Thailand, Jun. 2022, pp. 425--428.
+   \url{doi:10.18429/JACoW-IPAC2022-MOPOTK002}  
+   
 \bibitem{Safranek}
 	 J. Safranek,
 		\textquotedblleft{Experimental determination of storage ring optics using orbit response measurements}\textquotedblright,
@@ -275,8 +288,11 @@ The influence on beam emittance and energy spread resulting from the inclusion o
         \textquotedblleft{Physics of Electron Storage Rings}\textquotedblright,
         in \emph{Accelerator physics}, London, UK: World Scientific, 1999, pp. 383-458.
 
+ 
 
-           
+
+
+
 
 
 %    \bibitem{Liu:2015jpo}
