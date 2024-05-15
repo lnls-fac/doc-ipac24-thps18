@@ -61,7 +61,7 @@
 
 \title{Impact of DELTA undulator on SIRIUS beam dynamics }
 
-\author{G. R. Ascenção\textsuperscript{1}\thanks{gabriel.ascencao@lnls.br}, M. B. Alves\textsuperscript{1}, L. Liu, X. R. Resende, M. M. S. Velloso, F. H. de Sá\\ Brazilian Synchrotron Laboratory (LNLS), Campinas, Brazil \\
+\author{G. R. Ascenção\textsuperscript{1}\thanks{gabriel.ascencao@lnls.br}, M. B. Alves\textsuperscript{1}, L. Liu, X. R. Resende, M. M. S. Velloso\textsuperscript{1}, F. H. de Sá\\ Brazilian Synchrotron Laboratory (LNLS), Campinas, Brazil \\
 \textsuperscript{1}also at Gleb Wataghin Institute of Physics, University of Campinas, Campinas, Brazil
 }
 
@@ -71,12 +71,12 @@
 \maketitle
 %
 \begin{abstract}
-SIRIUS is the Brazilian 4th generation synchrotron light source. Currently, SIRIUS is in its Phase 1 stage of the project ~\cite{Liu:IPAC23-WEOGA2, Beamlines}, with 14 beamlines proposed, some of which are already used by external users. Recently, the SABIÁ beamline underwent a transition where its commissioning insertion device (ID) was replaced by the beamline's titular ID, an in-house developed DELTA undulator  \cite{Vilela:IPAC17-WEPIK053, Vilela:IPAC18-TUPMK003}. This device offers versatility in generating various polarizations of light depending on the relative positions of the ID cassettes. However,  each permissible configuration engenders distinct perturbations in beam dynamics, particularly affecting beam orbit, optics, and equilibrium parameters. This paper reports the impacts of the DELTA on beam dynamics and outlines the correction strategies implemented to mitigate these effects.
+SIRIUS is the Brazilian 4\textsuperscript{th} generation synchrotron light source. Currently, SIRIUS is in its Phase 1 stage of the project ~\cite{Liu:IPAC23-WEOGA2, Beamlines}, with 14 beamlines proposed, some of which are already used by external users. Recently, the SABIÁ beamline underwent a transition where its commissioning insertion device (ID) was replaced by the beamline's titular ID, an in-house developed DELTA undulator  \cite{Vilela:IPAC17-WEPIK053, Vilela:IPAC18-TUPMK003}. This device offers versatility in generating various polarizations of light depending on the relative positions of the ID cassettes. However,  each permissible configuration engenders distinct perturbations in beam dynamics, particularly affecting beam orbit, optics, and equilibrium parameters. This paper reports the impacts of the DELTA on beam dynamics and outlines the correction strategies implemented to mitigate these effects.
 \end{abstract}
 
 
 \section{INTRODUCTION}
-As reported in a prior paper on the status of insertion devices in SIRIUS \cite{Ascenção:IPAC23-MOPM088}, the SABIA beamline was commissioned with a refurbished elliptically polarized undulator (EPU50) from the former LNLS light source (UVX). This undulator has since been replaced with a newly constructed DELTA undulator (DELTA52), enabling the same polarizations as the EPU50 while offering an expanded energy range spanning from $\SI{0.1}{\kilo\electronvolt}$ to $\SI{1.6}{\kilo\electronvolt}$. A comparative analysis of the key parameters of these two undulators is presented in Table~\ref{table1}.
+As reported in a prior paper on the status of insertion devices in SIRIUS \cite{Ascenção:IPAC23-MOPM088}, the SABIÁ beamline was commissioned with a refurbished elliptically polarized undulator (EPU50) from the former LNLS light source (UVX). This undulator has since been replaced with a newly constructed DELTA undulator (DELTA52), enabling the same polarizations as the EPU50 while offering an expanded energy range from $\SI{0.1}{\kilo\electronvolt}$ to $\SI{1.6}{\kilo\electronvolt}$. A comparative analysis of the key parameters of these two undulators is presented in Table~\ref{table1}.
 
 \begin{table}[h]
 \centering
@@ -93,103 +93,102 @@ $L \unit{[m]}$        & 2.7   & 1.2     \\ \bottomrule
 \label{table1}
 \end{table}
 
-The DELTA52 was installed at the center of a low-$\beta$ straight section of the storage ring, with $\beta_{x} = \SI{1.36}{m}$ and $\beta_{y} = \SI{1.60}{m}$. For this reason, the ID is not expected to introduce strong perturbations on beam dynamics. Besides,~\num{2} horizontal and vertical corrector coils and~\num{2} skew quadrupoles were also added to this straight section to be used in a feedforward system. 
+Even though the DELTA52 undulator allows full polarization control, only four distinct light polarizations are required by SABIÁ beamline: linear horizontal (LH), linear vertical (LV), left-handed circular (C$_-$), and right-handed circular (C$_+$). For this reason, the cassettes positions are restricted by the Programmable Logic Controller (PLC) of the ID to be only on the lines shown in Figure \ref{fig:config_space}. Additionally, the transition between polarizations can only be executed when the $K$ parameter is zero, defining another line of null polarization (NP) in the parameter space. with zero transverse field components. These position constraints are summarized in Fig. \ref{fig:config_space}, where we can see the five possible lines where the ID is allowed to move.
 
-Even though the DELTA52 undulator allows full polarization control, only four distinct light polarizations are needed by the SABIA beamline: linear horizontal (LH), linear vertical (LV), left-handed circular (C-), and right-handed circular (C+). For this reason, the cassettes positions are restricted by the Programmable Logic Controller (PLC) of the ID to be only on these lines. Additionally, the transition between polarizations can only be executed when the $K$ parameter is zero, defining another line of null polarization (NP) in the parameter space. These position constraints are summarized in Fig. \ref{fig:config_space}, where we can see the five possible lines where the ID can move.
+The DELTA52 was installed at the center of a low-$\beta$ straight section of the storage ring, with $\beta_{x} = \SI{1.49}{m}$ and $\beta_{y} = \SI{1.43}{m}$, thus it is not expected to introduce strong perturbations on beam dynamics in general. For the particular effects on orbit and coupling, the ID has pairs of horizontal and vertical corrector magnets (HCMs and VCMs) and skew quadrupoles to be used in a feedforward (FF) system. 
 
-The effect on the SIRIUS storage ring of all possible configurations of DELTA 52 has been characterized using simulations and measurements. The results of these characterizations are detailed in the sections below.
+The effect of all possible configurations of DELTA52 on SIRIUS storage ring has been characterized using simulations and measurements. The results of these characterizations are detailed in the sections below.
 
 \begin{figure}[]
     \centering
-   \includegraphics[width=.8\columnwidth]{config_space.pdf}
-   \caption{Configuration space of DELTA 52}
+   \includegraphics[width=.65\columnwidth]{THPS18_f1.pdf}
+   \caption{Configuration space of DELTA52}
    \label{fig:config_space}
 \end{figure}
 
 \section{Effects on orbit}
 
-To address the effects of the residual field integrals of the ID on the storage ring orbit, two corrector coils positioned adjacent to the ID operate in a feedforward (FF) scheme at $\SI{10}{Hz}$. The FF table was calculated to compensate for the orbit distortions caused by each DELTA configuration.
+To counteract the effects of the residual field integrals of the ID on the storage ring orbit, two corrector coils positioned adjacent to the ID operate in a FF scheme at an update rate of $\SI{10}{Hz}$. The FF table was calculated to compensate for the orbit distortions caused by each DELTA52 configuration.
 
-The first step in calculating the FF table involved measuring orbit distortions for several ID configurations (approximately~\num{10} for each polarization line) in relation to its homing position. Then, these distortions were filtered using the slow orbit feedback system (SOFB) response matrix to compensate for orbit drifts due to other sources during the acquisitions. This process is accomplished by calculating the kicks of all SOFB correctors that best fit the measured orbit distortions, $\Delta\vec{x}$, then rebuilding the distortions using only the correctors surrounding the DELTA52 undulator. We can express this process mathematically in the following form:
+The first step in calculating the FF table involved measuring orbit distortions for several ID configurations (approximately~\num{10} for each polarization line) in relation to its homing position ($K=0$, LH). Then, these distortions were filtered using the slow orbit feedback system (SOFB) response matrix (ORM) to compensate for orbit drifts due to other sources during the acquisitions. This process is accomplished by calculating the kicks of all SOFB correctors that best fit the horizontal and vertical measured orbit distortions, $\Delta\vec{r}$, then rebuilding them using only the SOFB correctors surrounding the DELTA52. We can express this process mathematically as:
 \begin{equation}
-    \Delta\vec{x}_\mathrm{f} = M_{\text{S}} P M_{\text{S}}^+\Delta\vec{x},
+    \Delta\vec{r}_\mathrm{f} = M_\text{S} P M_\text{S}^+\Delta\vec{r},
 \end{equation}
-where $M_\text{S} \in \mathbb{R}^{320}\times\mathbb{R}^{281}$ is the SOFB orbit response matrix and $M_{\text{S}}^+$ its pseudo-inverse, $P \in \mathbb{R}^{281}\times\mathbb{R}^{281}$ is the projection matrix that selects only the closest~\num{4} upstream and downstream horizontal and vertical correctors and $\Delta\vec{x}_\mathrm{f}$ is the filtered orbit distortion, containing mainly the variation induced by the new ID position. These filtered distortions can be corrected using the FF CMs of the ID. The Jacobian of the FF correctors was calculated using the storage ring computer model, while  SOFB's Jacobian is routinely measured. The final stage involved interpolating the kicks for all~\num{5} polarization lines to ensure a smooth transition between adjacent measured configurations and continuity on the intersection of the lines. The employed solution was to create four 2D Gaussian process models~\cite{Gaussian} on the space depicted in Fig.~\ref{fig:config_space}, one for each FF CM strength. This model was finely sampled on each polarization line to create enlarged FF tables, that were uploaded to the FF controller, where linear interpolation is used to define the correctors strength at runtime.
+where $M_\text{S} \in \mathbb{R}^{320\times281}$ is the SOFB ORM and $M_\text{S}^+$ its pseudo-inverse, $P \in \mathbb{R}^{281\times281}$ is a projection matrix that selects only the closest upstream and downstream horizontal and vertical correctors (in our case it was~\num{8} correctors in total),~\num{320} is the number of readouts of the~\num{160} BPMs and~\num{281} corresponds to all SOFB actuators,~\num{120}~HCMs,~\num{160}~VCMs plus the~RF frequency, and $\Delta\vec{r}_\mathrm{f}$ is the filtered orbit distortion, containing mainly the variation induced by the new ID position. These filtered distortions can be corrected using the FF CMs of the ID. The Jacobian of the FF correctors was calculated using the storage ring computer model, while  SOFB's ORM is the one routinely measured. The final stage involved interpolating the kicks for all~\num{5} polarization lines to ensure a smooth transition between adjacent measured configurations and continuity on the intersection of the lines. The employed solution was to create four 2D Gaussian process models~\cite{Gaussian} on the space depicted in Fig.~\ref{fig:config_space}, one for each FF CM strength. This model was finely sampled on each polarization line to create enlarged FF tables that were uploaded to the FF controller, where linear interpolation is used to define the corrector's strength at runtime.
 
-Figure \ref{fig:orbit_slow} illustrates the root mean square (r.m.s) of orbit distortions across all beam position monitors (BPMs) for various ID configurations with (solid lines) and without (dashed lines) the orbit FF acting. With FF-on,  the orbit residue is less than $\SI{2}{\mu m}$.
+Figure \ref{fig:orbit_slow} illustrates the r.m.s of orbit distortions across all beam position monitors (BPMs) for various ID configurations with (solid lines) and without (dashed lines) the orbit FF acting. With FF-on,  the orbit residue is less than $\SI{2}{\mu m}$.%, which can be absorbed by the Fast Orbit Feedback System (FOFB) without saturation.
 
-\begin{figure}[!h]
+\begin{figure}[]
     \centering
-   \includegraphics[width=\columnwidth]{Orbit_dist.pdf}
-   \caption{Effects of DELTA 52 on orbit and residue of feedforward correction for all DELTA configurations}
+   \includegraphics[width=\columnwidth]{THPS18_f2.pdf}
+   \caption{Effects of DELTA52 on orbit and residue of FF correction for all DELTA52 configurations}
    \label{fig:orbit_slow}
 \end{figure}
 
-In addition to statically characterizing orbit distortion and residual effects from feedforward compensation, the dynamic impact of device motion was assessed. An example of significant orbit distortion occurs for circular polarization with negative K parameter variations ranging from $\SI{0}{mm}$ to $\SI{13.125}{mm}$, moving at a maximum speed of 1 mm/s. Figure \ref{fig:orbit_fast} displays the r.m.s of the orbit distortion across all BPMs. The figure illustrates that feedforward compensation effectively mitigates dynamic distortions from ID movement.
+In addition to statically characterizing orbit distortion and residual effects from FF compensation, the dynamic impact of device motion was assessed. An example of significant orbit distortion occurs for circular polarization with negative $K$ parameter variations ranging from $\SI{0}{mm}$ to $\SI{13.125}{mm}$, moving at a maximum speed of 1 mm/s. Figure \ref{fig:orbit_fast} displays the r.m.s of the orbit distortion across all BPMs. The figure illustrates that FF compensation also effectively mitigates dynamic distortions from ID movement.
 
-\begin{figure}[!h]
+\begin{figure}[]
     \centering
-   \includegraphics[width=0.75\columnwidth]{Orbit_dist_FAcq.pdf}
-   \caption{Effects of ID movimentation on orbit and feedforward compensation. The plot shows the r.m.s of the orbit distortion across all BPMs.}
+   \includegraphics[width=0.7\columnwidth]{THPS18_f3.pdf}
+   \caption{Effects of ID movimentation on orbit and FF compensation. The plot shows the r.m.s of the orbit distortion across all BPMs.}
    \label{fig:orbit_fast}
 \end{figure}
 
 \section{Effects on optics}
 
-The effects of DELTA52 on the linear optics were also measured despite being very small. The tune shifts as a function of the device configuration can be seen in Figure \ref{fig:tunes}, where it is observed a tune shift of only 0.0012 in the worst-case.
+The effect of DELTA52 on the linear optics was also measured despite being very small. The betatron tune shifts as a function of the device configuration can be seen in Figure \ref{fig:tunes}, where it is observed a tune shift of only 0.0012 in the worst-case.
 
-\begin{figure}[!h]
+\begin{figure}[]
     \centering
-   \includegraphics[width=\columnwidth]{Tune_deviation.pdf}
+   \includegraphics[width=\columnwidth]{THPS18_f4.pdf}
    \caption{Effects of DELTA52 on tunes}
    \label{fig:tunes}
 \end{figure}
 
-Two methods have been employed to counteract these influences on linear optics. The initial approach involves determining the orbit response matrix of the system for each DELTA configuration and subsequently minimizing the variance between the matrix in the standard setup (K=0, horizontal polarization) and all alternative configurations by adjusting the normal quadrupole strengths of the ID section. Here, the fast orbit response measurements with AC excitation of the correctors were used \cite{Velloso:IPAC22-MOPOTK002}; using this method, each matrix measurement only took about $3$ minutes. Nevertheless, owing to the marginal impact of the ID on optics, this technique proved ineffective, as the disparity in matrices resulting from various ID configurations equaled the resolution of matrix measurements.
+Two methods have been employed to compensate for the impact on linear optics. The initial approach involves measuring the SOFB ORM for each DELTA52 configuration and subsequently minimizing the square of the difference between them and the matrix measured at the homing position, by adjusting the lattice quadrupole triplets located immediately upstream and downstream the ID's straight section. Here, each matrix measurement took about ~\SI{3}{\minute} thanks to the use of the fast ORM measurement algorithm described in \cite{Velloso:IPAC22-MOPOTK002}. This method proved ineffective due to the small perturbation of the ID on optics, as the matrix measurements do not have enough resolution to capture these effects.
 
-The alternative method only addresses tune shifts by using the two quadrupole triplets immediately preceding and following the ID's straight section. In this approach, the Jacobian describing the influence of quadrupole strengths on the tunes was computed based on empirical measurements. As the quadrupoles are adjusted symmetrically, this Jacobian forms a $2 \times 3$ matrix. The efficacy of this correction method is illustrated in Figure \ref{fig:tunes}, indicating that the tune shifts are constrained within a variation range of less than 0.0004. It's noteworthy that the adjustments made to the quadrupole strengths were below $0.07\%$.
+The other approach only corrects the tune shifts by adjusting the same quadrupoles from the previous method. In this approach, the Jacobian describing the influence of quadrupole strengths on the tunes was measured. As the quadrupoles are adjusted symmetrically, this Jacobian forms a $2 \times 3$ matrix. The efficacy of this correction method is illustrated in Figure \ref{fig:tunes}, indicating that the tune shifts were reduced to a variation range of less than~\num{0.0004}. This was achieved with very small adjustments of quadrupole strengths, below~\SI{0.07}{\percent}.
 
-The final adjustment in linear optics focused on correcting coupling. This correction method mirrored the initial approach tested for uncoupled optics. However, in this case, the objective was to minimize differences in the off-diagonal terms of the orbit response matrix relative to the matrix in the standard setup. This was achieved by adjusting the strength of the adjacent skew quadrupoles. For a non-invasive coupling estimation, the measured Orbit Response Matrices (ORMs) were utilized as inputs for the LOCO algorithm \cite{Safranek} to calibrate the storage ring model. Subsequently, employing this model, the merit figure used to estimate the coupling was the minimum tune separation. Figure \ref{fig:coupling} illustrates the difference in coupling with and without the activation of skew feedforward. It's evident that feedforward implementation mitigates coupling variation across the K parameters. Similar to the feedforward for corrections, a Gaussian model was employed to interpolate skew strengths for all possible configurations.
+The impact of DELTA52 on coupling was also characterized and corrected. This correction method mirrored the initial approach tested for uncoupled optics. However, in this case, the objective was to minimize differences in the off-diagonal terms of the ORMs. This was achieved by adjusting the strength of the FF skew quadrupoles. For a non-invasive coupling estimation, the measured ORMs were utilized as inputs for the LOCO algorithm~\cite{Safranek} to calibrate the storage ring model. Subsequently, employing this model, the figure of merit used to estimate the coupling was the minimum tune separation. Figure~\ref{fig:coupling} illustrates the difference in coupling with and without the actuation of skew quadrupoles FF. It's evident that FF implementation mitigates coupling variation across the $K$ parameters. Similar to the FF for orbit corrections, a Gaussian model was employed to interpolate skew strengths for all possible configurations.
  
-\begin{figure}[!h]
+\begin{figure}[]
     \centering
-   \includegraphics[width=\columnwidth]{coupling.pdf}
-   \caption{Effects of DELTA 52 on coupling}
+   \includegraphics[width=.9\columnwidth]{THPS18_f5.pdf}
+   \caption{Effects of DELTA52 on coupling with and without FF. The minimum tune separation was estimated by fitted models.}
    \label{fig:coupling}
 \end{figure}
 
 
 \section{Dynamic aperture}
 
-Following the DELTA installation, no impact was noted on the injection efficiency. This observation aligns with findings from tracking simulations on machines with random errors. These simulations were executed using Trackcpp \cite{Trackcpp}, where the measured ID fields were modeled as kickmaps. Dynamic aperture (DA) calculations were performed for each ID configuration across 20 machines with random errors. The results of these calculations are shown in Figure \ref{fig:dynapt}. In this figure, the solid lines represent the average DA for each ID configuration or bare machine, while the dashed lines represent the average DA $+/-$ the r.m.s.
+Following the DELTA52 installation, no impact was noted on the off-axis injection efficiency. This confirmed the expectation from tracking simulations on machines with random errors. These simulations were executed using Trackcpp \cite{Trackcpp}, where the measured ID fields were modeled as kickmaps. Dynamic aperture (DA) calculations were performed for each ID configuration across 20 machines with random errors. The results of these calculations are shown in Figure \ref{fig:dynapt}. In this figure, the solid lines represent the average DA for each ID configuration or bare machine, while the dashed lines represent the average DA $+/-$ the r.m.s.
 
 
-\begin{figure}[!h]
+\begin{figure}[]
     \centering
-   \includegraphics[width=0.9\columnwidth]{dynapt.pdf}
-   \caption{Impact of DELTA 52 on dynamic aperture: Solid lines depict the average  DA across the 20 machines, whereas dashed lines illustrate the average DA $+/-$ the r.m.s.}
+   \includegraphics[width=0.6\columnwidth]{THPS18_f6.pdf}
+   \caption{Impact of DELTA52 on dynamic aperture: Solid lines depict the average  DA across the 20 machines, whereas dashed lines illustrate the average DA $+/-$ the r.m.s.}
    \label{fig:dynapt}
 \end{figure}
 
 \section{Equilibrium parameters}
-The influence on beam emittance and energy spread resulting from the inclusion of the ID was calculated using analytical expressions derived from synchrotron radiation integrals \cite{Lee:1999}. Figure \ref{fig:eq_param} shows the effect of all the SIRIUS current IDs on the equilibrium parameters. In this calculation, it was assumed that all IDs were set to their maximum field configuration.
+The influence on beam emittance and energy spread resulting from the inclusion of the ID was calculated using analytical expressions derived from synchrotron radiation integrals \cite{Lee:1999} and has not been yet characterized in the machine. Figure \ref{fig:eq_param} shows the effect of all SIRIUS current IDs on the equilibrium parameters. In this calculation, it was assumed that all IDs were set to their maximum field configuration.
 
-\begin{figure}[!h]
+\begin{figure}[]
     \centering
-   \includegraphics[width=\columnwidth]{eqparams.pdf}
-   \caption{Effects of SIRIUS IDs on equilibrium parameters.}
+   \includegraphics[width=.95\columnwidth]{THPS18_f7.pdf}
+   \caption{Effects of SIRIUS IDs on equilibrium parameters. Calculations were made using analytical expressions from radiation integrals.}
    \label{fig:eq_param}
 \end{figure}
 
-Notably, despite the effect of the DELTA on emittance being small (about $\SI{-4.0}{\pico m~rad}$), it is considerably more significant than the APUs installed, in which each device only reduces the emittance by $\SI{1.22}{\pico m~rad}$. The DELTA introduces almost no effect on energy spread.
+The impact of DELTA52 on emittance is small, here it is worth remembering that the ID was placed in a straight section, where there is zero dispersion, which contributes to the reduction in emittance. Also, the DELTA52 introduces almost no effect on energy spread.
 
 \section{CONCLUSIONS}
 
-The results presented in this study indicate that the effects of the DELTA are not prejudicial to the beam dynamics. Orbit distortions can be effectively corrected using the local FF system. Tunes are minimally affected, and thus, FF correction is not a priority. Nevertheless, employing a system using adjacent quadrupoles was demonstrated to reduce tune shifts by a factor of 3. Additionally, coupling correction using local skew quadrupoles has been shown to be effective. As for nonlinear effects, it was demonstrated that the dynamic aperture did not deteriorate, as evidenced by sustained good injection efficiency post-ID installation.
-Finally, it was also shown that this new ID does not have much impact on the equilibrium parameters. 
+The results presented in this study indicate that the effects of the DELTA52 (installed in the SIRIUS low-$\beta$ straight section) are not prejudicial to the beam dynamics. Orbit distortions can be effectively corrected using the local FF system. Tunes are minimally affected, and thus, a FF correction is not a priority with the presently installed IDs. Nevertheless, employing a system using adjacent quadrupoles was demonstrated to reduce tune shifts by a factor of 3. Additionally, coupling correction using local skew quadrupoles has been shown to be effective. As for nonlinear effects, it was demonstrated that the dynamic aperture did not deteriorate, as evidenced by sustained good off-axis injection efficiency post-ID installation.
+Finally, it was also shown by simulation methods that this new ID does not have much impact on the equilibrium parameters. 
 
 \section{ACKNOWLEDGEMENTS}
-
 The authors thank the CNPEM Magnetic Systems Group (SMA) for providing field measurements and assistance with questions regarding the DELTA52.
 
 \begin{thebibliography}{14} % Use for 1-9 references
